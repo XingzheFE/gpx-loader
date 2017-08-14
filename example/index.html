@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    select file: <input type="file" id="file">
+</body>
+<script src="../dist/index.js" charset="utf-8"></script>
+<script type="text/javascript">
+    let loader = window['gpx-loader'];
+    document.querySelector('#file').addEventListener('change', function (e) {
+        var files = e.target.files;
+        loader.read(files[0]).then(function(data) {
+            console.log(data);
+        });
+    });
+</script>
+</html>
