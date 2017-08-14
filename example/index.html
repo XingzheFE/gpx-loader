@@ -11,11 +11,13 @@
 </body>
 <script src="../dist/index.js" charset="utf-8"></script>
 <script type="text/javascript">
-    let loader = window['gpx-loader'];
+    var loader = window['gpx-loader'];
     document.querySelector('#file').addEventListener('change', function (e) {
         var files = e.target.files;
         loader.read(files[0]).then(function(data) {
             console.log(data);
+        }).catch(function(err) {
+            console.log(err);
         });
     });
 </script>
